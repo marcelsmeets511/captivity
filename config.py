@@ -6,7 +6,7 @@ PORTAL_IP = "10.217.54.8"  # VERVANG DIT met het daadwerkelijke IP van je portal
 WEB_SERVER_PORT = 80  # Standaard HTTP poort
 
 # Poort waarop de DNS server luistert
-DNS_SERVER_PORT = 53  # Standaard DNS poort
+DNS_SERVER_PORT = 530  # Standaard DNS poort
 
 # Interface waarop de DNS server moet luisteren (0.0.0.0 = alle interfaces)
 DNS_LISTEN_IP = "10.217.54.8"
