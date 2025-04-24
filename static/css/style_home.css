@@ -1,0 +1,247 @@
+/* iOS Home Screen Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    touch-action: manipulation;
+}
+
+.screen {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Status Bar */
+.status-bar {
+    height: 44px;
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.status-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* App Grid */
+.icon-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.icon-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+.icon-label {
+    margin-top: 5px;
+    font-size: 12px;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.icon-link {
+    text-decoration: none;
+}
+
+/* Dock */
+.dock {
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    margin: 0 20px 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.dock .icon-box {
+    margin: 0 5px;
+}
+
+.dock .icon-image {
+    width: 60px;
+    height: 60px;
+}
+
+/* Phone Dialer Popup */
+.dialer-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.dialer-popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dialer-content {
+    width: 90%;
+    max-width: 350px;
+    background-color: rgba(28, 28, 30, 0.95);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.close-dialer {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.display-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#dialer-display {
+    width: 100%;
+    padding: 15px;
+    font-size: 28px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.backspace-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.backspace-button.visible {
+    opacity: 1;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.key {
+    background-color: rgba(60, 60, 67, 0.6);
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.key span {
+    font-size: 10px;
+    color: #999;
+    margin-top: 2px;
+}
+
+.key:active {
+    background-color: rgba(80, 80, 87, 0.8);
+}
+
+.action-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.call-button {
+    background-color: #34C759;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.call-button:active {
+    background-color: #2BB14D;
+}
+
+/* Empty icon placeholder */
+.icon-box.empty {
+    visibility: hidden;
+}

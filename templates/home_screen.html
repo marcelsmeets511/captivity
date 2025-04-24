@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    <title>iPhone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="screen">
+        <div class="status-bar">
+            <span class="time" id="status-time">9:41</span>
+            <div class="status-icons">
+                <i class="fas fa-signal"></i>
+                <span>Wi-Fi</span>
+                <i class="fas fa-battery-three-quarters"></i>
+            </div>
+        </div>
+        
+        <div class="icon-grid">
+            <!-- First Row -->
+            <a href="#" onclick="alert('Messages App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/messages.png') }}" alt="Messages" class="icon-image">
+                    <span class="icon-label">Messages</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Calendar App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/calendar.png') }}" alt="Calendar" class="icon-image">
+                    <span class="icon-label">Calendar</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Photos App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/photos.png') }}" alt="Photos" class="icon-image">
+                    <span class="icon-label">Photos</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Camera App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/camera.png') }}" alt="Camera" class="icon-image">
+                    <span class="icon-label">Camera</span>
+                </div>
+            </a>
+            
+            <!-- Second Row -->
+            <a href="#" onclick="alert('Maps App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/maps.png') }}" alt="Maps" class="icon-image">
+                    <span class="icon-label">Maps</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Clock App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/clock.png') }}" alt="Clock" class="icon-image">
+                    <span class="icon-label">Clock</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('News App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/news.png') }}" alt="News" class="icon-image">
+                    <span class="icon-label">News</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Notes App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/notes.png') }}" alt="Notes" class="icon-image">
+                    <span class="icon-label">Notes</span>
+                </div>
+            </a>
+            
+            <!-- Third Row -->
+            <a href="#" onclick="alert('Reminders App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/reminders.png') }}" alt="Reminders" class="icon-image">
+                    <span class="icon-label">Reminders</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('App Store\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/appstore.png') }}" alt="App Store" class="icon-image">
+                    <span class="icon-label">App Store</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Health App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/health.png') }}" alt="Health" class="icon-image">
+                    <span class="icon-label">Health</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Settings App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/settings.png') }}" alt="Settings" class="icon-image">
+                    <span class="icon-label">Settings</span>
+                </div>
+            </a>
+            
+            <!-- Fourth Row -->
+            <a href="#" onclick="alert('Wallet App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/wallet.png') }}" alt="Wallet" class="icon-image">
+                    <span class="icon-label">Wallet</span>
+                </div>
+            </a>
+            <a href="/contacts" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/contacts.png') }}" alt="Contacts" class="icon-image">
+                    <span class="icon-label">Contacts</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Files App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/files.png') }}" alt="Files" class="icon-image">
+                    <span class="icon-label">Files</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Home App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/home.png') }}" alt="Home" class="icon-image">
+                    <span class="icon-label">Home</span>
+                </div>
+            </a>
+            
+            <!-- Fifth Row -->
+            <a href="#" onclick="alert('Music App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/music.png') }}" alt="Music" class="icon-image">
+                    <span class="icon-label">Music</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Calculator App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/calculator.png') }}" alt="Calculator" class="icon-image">
+                    <span class="icon-label">Calculator</span>
+                </div>
+            </a>
+            <a href="#" onclick="alert('Weather App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/weather.png') }}" alt="Weather" class="icon-image">
+                    <span class="icon-label">Weather</span>
+                </div>
+            </a>
+            <div class="icon-box empty"></div>
+        </div>
+        
+        <div class="dock">
+            <a href="/phone" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/phone.png') }}" alt="Phone" class="icon-image">
+                </div>
+            </a>
+            <a href="#" onclick="alert('Mail App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/mail.png') }}" alt="Mail" class="icon-image">
+                </div>
+            </a>
+            <a href="/safari" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/safari.png') }}" alt="Safari" class="icon-image">
+                </div>
+            </a>
+            <a href="#" onclick="alert('Music App\n(Web version not available)'); return false;" class="icon-link">
+                <div class="icon-box">
+                    <img src="{{ url_for('static', filename='icons/music.png') }}" alt="Music" class="icon-image">
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Update the time in the status bar
+        function updateTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            
+            // Format the time as HH:MM
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            
+            document.getElementById('status-time').textContent = hours + ':' + minutes;
+        }
+        
+        // Update time immediately and then every minute
+        updateTime();
+        setInterval(updateTime, 60000);
+    </script>
+</body>
+</html>

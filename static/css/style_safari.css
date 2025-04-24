@@ -1,0 +1,191 @@
+/* Safari App Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    touch-action: manipulation;
+}
+
+.app-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+/* Status Bar */
+.status-bar {
+    height: 44px;
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #fff;
+    color: #000;
+}
+
+.status-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Browser Header */
+.browser-header {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.url-bar-container {
+    position: relative;
+}
+
+.url-bar {
+    display: flex;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    padding: 0 10px;
+    height: 36px;
+}
+
+.url-icon {
+    color: #8E8E93;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+#url-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    outline: none;
+}
+
+#url-input::placeholder {
+    color: #8E8E93;
+}
+
+.clear-button {
+    background: none;
+    border: none;
+    color: #8E8E93;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.clear-button.hidden {
+    display: none;
+}
+
+/* Browser Content */
+.browser-content {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+#browser-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.start-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.favorites {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.favorites-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.favorite-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+}
+
+.favorite-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #007AFF;
+    margin-bottom: 8px;
+}
+
+.favorite-name {
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+}
+
+/* Browser Footer */
+.browser-footer {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.footer-button {
+    background: none;
+    border: none;
+    color: #007AFF;
+    font-size: 20px;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.footer-button:disabled {
+    color: #C7C7CC;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_contacts.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="status-bar">
+            <span class="time" id="status-time">9:41</span>
+            <div class="status-icons">
+                <i class="fas fa-signal"></i>
+                <span>Wi-Fi</span>
+                <i class="fas fa-battery-three-quarters"></i>
+            </div>
+        </div>
+        
+        <div class="app-header">
+            <a href="/" class="back-button"><i class="fas fa-chevron-left"></i></a>
+            <h1>Contacts</h1>
+            <a href="#" class="add-button"><i class="fas fa-plus"></i></a>
+        </div>
+        
+        <div class="search-bar">
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+        </div>
+        
+        <div class="contacts-list">
+            <div class="index-letter">A</div>
+            <div class="contact-item" onclick="showContactDetails('Alice Johnson', '+1 (555) 123-4567')">
+                <div class="contact-avatar">A</div>
+                <div class="contact-name">Alice Johnson</div>
+            </div>
+            <div class="contact-item" onclick="showContactDetails('Adam Smith', '+1 (555) 987-6543')">
+                <div class="contact-avatar">A</div>
+                <div class="contact-name">Adam Smith</div>
+            </div>
+            
+            <div class="index-letter">B</div>
+            <div class="contact-item" onclick="showContactDetails('Bob Williams', '+1 (555) 234-5678')">
+                <div class="contact-avatar">B</div>
+                <div class="contact-name">Bob Williams</div>
+            </div>
+            
+            <div class="index-letter">C</div>
+            <div class="contact-item" onclick="showContactDetails('Charlie Brown', '+1 (555) 345-6789')">
+                <div class="contact-avatar">C</div>
+                <div class="contact-name">Charlie Brown</div>
+            </div>
+            
+            <div class="index-letter">J</div>
+            <div class="contact-item" onclick="showContactDetails('John Doe', '+1 (555) 456-7890')">
+                <div class="contact-avatar">J</div>
+                <div class="contact-name">John Doe</div>
+            </div>
+            <div class="contact-item" onclick="showContactDetails('Jane Smith', '+1 (555) 567-8901')">
+                <div class="contact-avatar">J</div>
+                <div class="contact-name">Jane Smith</div>
+            </div>
+            
+            <div class="index-letter">M</div>
+            <div class="contact-item" onclick="showContactDetails('Mary Johnson', '+1 (555) 678-9012')">
+                <div class="contact-avatar">M</div>
+                <div class="contact-name">Mary Johnson</div>
+            </div>
+            
+            <div class="index-letter">S</div>
+            <div class="contact-item" onclick="showContactDetails('Sarah Davis', '+1 (555) 789-0123')">
+                <div class="contact-avatar">S</div>
+                <div class="contact-name">Sarah Davis</div>
+            </div>
+        </div>
+        
+        <div class="alphabet-index">
+            <div class="index-item">A</div>
+            <div class="index-item">B</div>
+            <div class="index-item">C</div>
+            <div class="index-item">D</div>
+            <div class="index-item">E</div>
+            <div class="index-item">F</div>
+            <div class="index-item">G</div>
+            <div class="index-item">H</div>
+            <div class="index-item">I</div>
+            <div class="index-item">J</div>
+            <div class="index-item">K</div>
+            <div class="index-item">L</div>
+            <div class="index-item">M</div>
+            <div class="index-item">N</div>
+            <div class="index-item">O</div>
+            <div class="index-item">P</div>
+            <div class="index-item">Q</div>
+            <div class="index-item">R</div>
+            <div class="index-item">S</div>
+            <div class="index-item">T</div>
+            <div class="index-item">U</div>
+            <div class="index-item">V</div>
+            <div class="index-item">W</div>
+            <div class="index-item">X</div>
+            <div class="index-item">Y</div>
+            <div class="index-item">Z</div>
+            <div class="index-item">#</div>
+        </div>
+    </div>
+    
+    <div id="contact-details" class="contact-details hidden">
+        <div class="contact-details-header">
+            <button class="close-button" onclick="hideContactDetails()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="contact-details-avatar">
+                <span id="contact-initial"></span>
+            </div>
+            <h2 id="contact-name-display"></h2>
+        </div>
+        
+        <div class="contact-actions">
+            <div class="action-button">
+                <div class="action-icon message">
+                    <i class="fas fa-comment"></i>
+                </div>
+                <span>Message</span>
+            </div>
+            <div class="action-button">
+                <div class="action-icon call">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <span>Call</span>
+            </div>
+            <div class="action-button">
+                <div class="action-icon video">
+                    <i class="fas fa-video"></i>
+                </div>
+                <span>Video</span>
+            </div>
+            <div class="action-button">
+                <div class="action-icon mail">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <span>Mail</span>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <div class="info-section">
+                <div class="info-label">Phone</div>
+                <div class="info-item">
+                    <div class="info-value" id="contact-phone"></div>
+                    <div class="info-type">mobile</div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-label">Notes</div>
+                <div class="info-item">
+                    <div class="info-value">Tap to add notes</div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-item send-message
+                <div class="info-item send-message">
+                    <div class="info-value">Send Message</div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-item share-contact">
+                    <div class="info-value">Share Contact</div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-item add-to-favorites">
+                    <div class="info-value">Add to Favorites</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/contacts_app.js') }}"></script>
+</body>
+</html>

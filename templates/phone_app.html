@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    <title>Phone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_phone.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="status-bar">
+            <span class="time" id="status-time">9:41</span>
+            <div class="status-icons">
+                <i class="fas fa-signal"></i>
+                <span>Wi-Fi</span>
+                <i class="fas fa-battery-three-quarters"></i>
+            </div>
+        </div>
+        
+        <div class="app-header">
+            <a href="/" class="back-button"><i class="fas fa-chevron-left"></i></a>
+            <h1>Phone</h1>
+            <div class="header-spacer"></div>
+        </div>
+        
+        <div class="tab-bar">
+            <div class="tab active">Keypad</div>
+            <div class="tab">Recents</div>
+            <div class="tab">Contacts</div>
+            <div class="tab">Voicemail</div>
+        </div>
+        
+        <div class="dialer-container">
+            <div class="display-container">
+                <input type="text" id="dialer-display" readonly>
+                <button id="dialer-backspace" class="backspace-button" aria-label="Backspace">
+                    <i class="fas fa-backspace"></i>
+                </button>
+            </div>
+            
+            <div class="keypad">
+                <button class="key" data-value="1">1<span>&nbsp;</span></button>
+                <button class="key" data-value="2">2<span>ABC</span></button>
+                <button class="key" data-value="3">3<span>DEF</span></button>
+                <button class="key" data-value="4">4<span>GHI</span></button>
+                <button class="key" data-value="5">5<span>JKL</span></button>
+                <button class="key" data-value="6">6<span>MNO</span></button>
+                <button class="key" data-value="7">7<span>PQRS</span></button>
+                <button class="key" data-value="8">8<span>TUV</span></button>
+                <button class="key" data-value="9">9<span>WXYZ</span></button>
+                <button class="key special" data-value="*">*</button>
+                <button class="key" data-value="0">0<span>+</span></button>
+                <button class="key special" data-value="#">#</button>
+            </div>
+            
+            <div class="action-button-container">
+                <button id="dialer-call-button" class="call-button" aria-label="Call">
+                    <i class="fas fa-phone"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Call interface (hidden by default) -->
+    <div id="call-interface" class="call-interface hidden">
+        <div class="call-header">
+            <h2 id="call-status-text">Calling...</h2>
+            <p id="call-number"></p>
+            <p class="call-status">VoIP Call</p>
+            <div id="call-timer">00:00</div>
+        </div>
+        
+        <div class="call-controls">
+            <button id="mute-button" class="control-button">
+                <i class="fas fa-microphone"></i>
+                <span>Mute</span>
+            </button>
+            <button id="speaker-button" class="control-button">
+                <i class="fas fa-volume-up"></i>
+                <span>Speaker</span>
+            </button>
+            <button id="keypad-button" class="control-button">
+                <i class="fas fa-th"></i>
+                <span>Keypad</span>
+            </button>
+        </div>
+        
+        <div class="call-actions">
+            <button id="end-call-button" class="end-call-btn">
+                <i class="fas fa-phone-slash"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- DTMF Keypad (hidden by default) -->
+    <div id="dtmf-keypad" class="dtmf-keypad hidden">
+        <div class="dtmf-header">
+            <button id="close-dtmf" class="close-button">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="keypad">
+            <button class="key dtmf-key" data-value="1">1</button>
+            <button class="key dtmf-key" data-value="2">2</button>
+            <button class="key dtmf-key" data-value="3">3</button>
+            <button class="key dtmf-key" data-value="4">4</button>
+            <button class="key dtmf-key" data-value="5">5</button>
+            <button class="key dtmf-key" data-value="6">6</button>
+            <button class="key dtmf-key" data-value="7">7</button>
+            <button class="key dtmf-key" data-value="8">8</button>
+            <button class="key dtmf-key" data-value="9">9</button>
+            <button class="key dtmf-key" data-value="*">*</button>
+            <button class="key dtmf-key" data-value="0">0</button>
+            <button class="key dtmf-key" data-value="#">#</button>
+        </div>
+    </div>
+    
+    <!-- Twilio Voice SDK -->
+    <script src="https://sdk.twilio.com/js/client/releases/1.14.0/twilio.js"></script>
+    <script src="{{ url_for('static', filename='js/phone_app.js') }}"></script>
+</body>
+</html>
