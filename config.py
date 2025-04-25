@@ -1,15 +1,15 @@
 # config.py
 # IP-adres van de machine waar de web_server.py draait
-PORTAL_IP = "10.217.54.8"  # VERVANG DIT met het daadwerkelijke IP van je portal server
+PORTAL_IP = "216.24.57.4"  # VERVANG DIT met het daadwerkelijke IP van je portal server
 
 # Poort waarop de webserver luistert
 WEB_SERVER_PORT = 80  # Standaard HTTP poort
 
 # Poort waarop de DNS server luistert
-DNS_SERVER_PORT = 530  # Standaard DNS poort
+DNS_SERVER_PORT = 53  # Standaard DNS poort
 
 # Interface waarop de DNS server moet luisteren (0.0.0.0 = alle interfaces)
-DNS_LISTEN_IP = "10.217.54.8"
+DNS_LISTEN_IP = "0.0.0.0"
 
 # Pad naar de template map
 TEMPLATE_FOLDER = "templates"
